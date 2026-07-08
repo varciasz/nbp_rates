@@ -1,15 +1,15 @@
-#file generated at 2026-06-11 05:35:57
+#file generated at 2026-07-08 03:34:28
 from importlib import import_module
 from datetime import date, datetime, timedelta
 
-TABLE_A_CURRENCIES = frozenset({'BRL', 'CAD', 'SKK', 'ILS', 'IRR', 'XDR', 'FIM', 'PTE', 'CYP', 'ZAR', 'LUC', 'YUN', 'MTL', 'CNY', 'ESP', 'CHF', 'HKD', 'KWD', 'HRK', 'EUR', 'LBP', 'BEF', 'INR', 'DKK', 'LYD', 'PHP', 'BEC', 'YUD', 'USD', 'RON', 'ITL', 'NZD', 'MYR', 'IDR', 'BEL', 'GBP', 'LUL', 'SGD', 'GRD', 'SEK', 'NOK', 'ATS', 'XEU', 'TRL', 'LTL', 'IEP', 'LVL', 'NLG', 'UAH', 'KRW', 'EEK', 'SAR', 'RUB', 'ISK', 'BGN', 'FRF', 'SIT', 'MXN', 'THB', 'TRY', 'CLP', 'DEM', 'AUD', 'JPY', 'HUF', 'LUF', 'CZK'})
-TABLE_B_CURRENCIES = frozenset({'CVE', 'PYG', 'SKK', 'DJF', 'SSP', 'DOP', 'KMF', 'XPF', 'SLL', 'MVR', 'CNY', 'MUR', 'SLE', 'ZRN', 'GTQ', 'MWK', 'CRC', 'MKD', 'RSD', 'KES', 'NZD', 'IDR', 'MYR', 'BND', 'XCG', 'NPR', 'ECS', 'TJS', 'CDF', 'EEK', 'GMD', 'PKR', 'NAD', 'ROL', 'WST', 'AFA', 'GIP', 'AWG', 'TRY', 'GHC', 'ZWG', 'BAM', 'PAB', 'MZM', 'ALL', 'STN', 'GEL', 'ILS', 'MZN', 'BOB', 'VND', 'MGF', 'MRO', 'SVC', 'ZAR', 'FJD', 'MRU', 'KGS', 'KWD', 'ARS', 'BGL', 'BYB', 'GNF', 'BYN', 'SDD', 'VEF', 'TOP', 'ZMK', 'AMD', 'SZL', 'DZD', 'UYU', 'SAR', 'ISK', 'BDT', 'AOA', 'BGN', 'MAD', 'COP', 'EGP', 'NIO', 'BSD', 'CLP', 'JMD', 'SRG', 'BIF', 'KZT', 'BBD', 'BRL', 'NGN', 'OMR', 'AZN', 'STD', 'IRR', 'IQD', 'BHD', 'KHR', 'CSD', 'ERN', 'GHS', 'YER', 'HTG', 'QAR', 'SCR', 'UZS', 'PHP', 'JOD', 'XCD', 'RWF', 'SGD', 'MDL', 'PGK', 'ETB', 'LTL', 'LVL', 'UAH', 'TZS', 'BYR', 'THB', 'SOS', 'ANG', 'SYP', 'ZWR', 'TND', 'ZWL', 'VES', 'UGX', 'TMT', 'CYP', 'GYD', 'BZD', 'MTL', 'ZMW', 'SBD', 'VEB', 'VUV', 'HKD', 'XAF', 'YUM', 'HRK', 'MNT', 'LBP', 'INR', 'LYD', 'MGA', 'RON', 'AFN', 'BWP', 'SRD', 'ZWD', 'LSL', 'CUP', 'LAK', 'MMK', 'KRW', 'TRL', 'SDG', 'AED', 'RUB', 'HNL', 'AON', 'MXN', 'SIT', 'LRD', 'TTD', 'TWD', 'XOF', 'PEN', 'LKR', 'MOP'})
+TABLE_A_CURRENCIES = frozenset({'HRK', 'XDR', 'DEM', 'TRL', 'YUD', 'NZD', 'SAR', 'LUF', 'CYP', 'HKD', 'LBP', 'KWD', 'LUC', 'EUR', 'LVL', 'MXN', 'KRW', 'BEF', 'SKK', 'MYR', 'ILS', 'MTL', 'ESP', 'PTE', 'RON', 'YUN', 'FRF', 'CNY', 'DKK', 'IRR', 'THB', 'SEK', 'CLP', 'ISK', 'LTL', 'SIT', 'BRL', 'IEP', 'RUB', 'GRD', 'SGD', 'LUL', 'IDR', 'XEU', 'FIM', 'ATS', 'HUF', 'INR', 'BGN', 'AUD', 'LYD', 'NOK', 'PHP', 'ITL', 'GBP', 'TRY', 'CAD', 'UAH', 'CZK', 'CHF', 'USD', 'BEL', 'BEC', 'JPY', 'EEK', 'NLG', 'ZAR'})
+TABLE_B_CURRENCIES = frozenset({'BWP', 'GTQ', 'CDF', 'ZMK', 'GHC', 'UGX', 'KWD', 'YUM', 'SZL', 'SSP', 'MRO', 'NIO', 'TTD', 'KMF', 'MMK', 'TZS', 'AMD', 'MVR', 'ETB', 'PYG', 'LTL', 'SVC', 'BAM', 'OMR', 'GNF', 'IDR', 'XCG', 'MAD', 'HTG', 'RWF', 'RSD', 'XCD', 'FJD', 'MUR', 'GMD', 'LYD', 'MZM', 'TJS', 'TOP', 'VND', 'ZAR', 'QAR', 'NZD', 'CYP', 'KGS', 'XAF', 'LVL', 'XOF', 'JOD', 'COP', 'KRW', 'VEB', 'VEF', 'BHD', 'DJF', 'TND', 'ISK', 'MKD', 'SIT', 'HNL', 'RUB', 'MGA', 'KES', 'AZN', 'ANG', 'SCR', 'BGN', 'BIF', 'BZD', 'ZWR', 'DZD', 'GHS', 'SDG', 'ZWG', 'MOP', 'YER', 'BYB', 'CLP', 'TRL', 'SOS', 'LSL', 'LBP', 'AOA', 'MRU', 'ARS', 'BOB', 'LKR', 'LAK', 'ECS', 'MZN', 'ROL', 'MYR', 'BYR', 'MTL', 'RON', 'AED', 'IRR', 'AWG', 'SRD', 'AFA', 'TWD', 'EGP', 'ZMW', 'ZRN', 'PAB', 'BDT', 'SLE', 'XPF', 'STN', 'PKR', 'MDL', 'CVE', 'CSD', 'INR', 'GIP', 'ZWD', 'VUV', 'LRD', 'SRG', 'TRY', 'SDD', 'BBD', 'PGK', 'EEK', 'ERN', 'TMT', 'NGN', 'HRK', 'GEL', 'BND', 'MGF', 'DOP', 'SAR', 'CRC', 'HKD', 'MNT', 'ZWL', 'MXN', 'NPR', 'SYP', 'SKK', 'GYD', 'SLL', 'ILS', 'UZS', 'CNY', 'KZT', 'MWK', 'THB', 'WST', 'BRL', 'IQD', 'STD', 'NAD', 'BGL', 'SGD', 'PEN', 'JMD', 'BYN', 'VES', 'SBD', 'UYU', 'BSD', 'CUP', 'PHP', 'UAH', 'KHR', 'AFN', 'ALL', 'AON'})
 
 def ProvideCurrencyRate(date_given, currency, fallback=False, _depth=0):
     """
     Fetches FX rate for a given date. If rate is not found and fallback is True,
     it searches recursively up to 31 days back (to support Table B and holidays).
-    Data since 2012 till 2026-6-10 is available offline but if provided date is more recent then nbp api is used
+    Data since 2012 till 2026-7-7 is available offline but if provided date is more recent then nbp api is used
     """
     # Safety break for recursion (covers 31 days back)
     if _depth > 31: return '-1'
@@ -25,7 +25,7 @@ def ProvideCurrencyRate(date_given, currency, fallback=False, _depth=0):
     else:
         raise ValueError('date_given must be a datetime.date object or a string in YYYY-MM-DD format')
 
-    if date_given > date(2026,6,10):
+    if date_given > date(2026,7,7):
         if currency == 'USD' or currency == 'EUR': table_name = 'A'
         elif currency in TABLE_A_CURRENCIES: table_name = 'A'
         elif currency in TABLE_B_CURRENCIES: table_name = 'B'
@@ -33,7 +33,7 @@ def ProvideCurrencyRate(date_given, currency, fallback=False, _depth=0):
 
         from .online_fetcher import fetch_rate_from_nbp
         rate = fetch_rate_from_nbp(date_given, currency, table_name)
-        if rate == '-1' and currency in {'BRL', 'SKK', 'ILS', 'IRR', 'CYP', 'ZAR', 'MTL', 'CNY', 'HKD', 'KWD', 'HRK', 'LBP', 'INR', 'PHP', 'LYD', 'RON', 'NZD', 'IDR', 'MYR', 'SGD', 'UAH', 'TRL', 'LTL', 'LVL', 'KRW', 'EEK', 'SAR', 'RUB', 'ISK', 'BGN', 'SIT', 'MXN', 'THB', 'TRY', 'CLP'}:  # some currencies are in both tables
+        if rate == '-1' and currency in {'HRK', 'TRL', 'NZD', 'SAR', 'CYP', 'HKD', 'LBP', 'KWD', 'MXN', 'LVL', 'KRW', 'SKK', 'MYR', 'ILS', 'MTL', 'RON', 'CNY', 'IRR', 'THB', 'ISK', 'LTL', 'SIT', 'BRL', 'RUB', 'SGD', 'IDR', 'INR', 'BGN', 'LYD', 'PHP', 'TRY', 'UAH', 'EEK', 'CLP', 'ZAR'}:  # some currencies are in both tables
             rate = fetch_rate_from_nbp(date_given, currency, {'A': 'B', 'B': 'A'}[table_name]) #run also for the opposite table if rate is not found
     else:
         try:
