@@ -1,0 +1,48 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "nbp_rates"
+authors = [{ name = "Sebastian Kowalik" }]
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Natural Language :: Polish",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+description = "A modular library for NBP exchange rates with offline and online support."
+keywords = ["nbp", "exchange", "rates", "currency", "forex", "polska", "pln"]
+requires-python = ">=3.6"
+dependencies = []
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/varciasz/nbp_rates"
+Repository = "https://github.com/varciasz/nbp_rates.git"
+"Bug Tracker" = "https://github.com/varciasz/nbp_rates/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.12",
+    "twine>=3.4",
+    "build>=0.7",
+]
+test = [
+    "pytest>=6.0",
+    "pytest-cov>=2.12",
+]
