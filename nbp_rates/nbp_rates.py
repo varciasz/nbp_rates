@@ -1,4 +1,4 @@
-#file generated at 2026-07-10 01:51:55
+#file generated at 2026-07-10 22:55:22
 from importlib import import_module
 from datetime import date, datetime, timedelta
 
@@ -9,7 +9,7 @@ def ProvideCurrencyRate(date_given, currency, fallback=False, _depth=0):
     """
     Fetches FX rate for a given date. If rate is not found and fallback is True,
     it searches recursively up to 31 days back (to support Table B and holidays).
-    Data since 2012 till 2026-7-9 is available offline but if provided date is more recent then nbp api is used
+    Data since 2012 till 2026-7-10 is available offline but if provided date is more recent then nbp api is used
     """
     # Safety break for recursion (covers 31 days back)
     if _depth > 31: return '-1'
@@ -25,7 +25,7 @@ def ProvideCurrencyRate(date_given, currency, fallback=False, _depth=0):
     else:
         raise ValueError('date_given must be a datetime.date object or a string in YYYY-MM-DD format')
 
-    if date_given > date(2026,7,9):
+    if date_given > date(2026,7,10):
         if currency == 'USD' or currency == 'EUR': table_name = 'A'
         elif currency in TABLE_A_CURRENCIES: table_name = 'A'
         elif currency in TABLE_B_CURRENCIES: table_name = 'B'
