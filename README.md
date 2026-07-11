@@ -125,5 +125,5 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Changelog
 
-### Version 0.1.4
+### Version 0.9.20260711
 - Initial release with offline and online exchange rate support
