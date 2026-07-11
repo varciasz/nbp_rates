@@ -46,4 +46,4 @@ def ProvideCurrencyRate(date_given, currency, fallback=False, _depth=0):
     if fallback and rate == '-1':
         return ProvideCurrencyRate(date_given - timedelta(days=1), currency, fallback=True, _depth=_depth + 1)
 
-    return rate
+    return rate 
