@@ -1,4 +1,4 @@
-#file generated at 2026-07-11 02:43:00
+#file generated at 2026-07-11 05:00:35
 from importlib import import_module
 from datetime import date, datetime, timedelta
 
@@ -46,4 +46,4 @@ def ProvideCurrencyRate(date_given, currency, fallback=False, _depth=0):
     if fallback and rate == '-1':
         return ProvideCurrencyRate(date_given - timedelta(days=1), currency, fallback=True, _depth=_depth + 1)
 
-    return rate 
+    return rate
