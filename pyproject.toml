@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "nbp_rates"
 authors = [{ name = "Sebastian Kowalik" }]
-version = "0.9.20260711"
+version = "1.0.20260711"
 license = { text = "MIT" }
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -26,6 +26,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 description = "A modular library for NBP exchange rates with offline and online support."
+readme = "README.md"
 keywords = ["nbp", "exchange", "rates", "currency", "forex", "polska", "pln"]
 requires-python = ">=3.6"
 dependencies = []
