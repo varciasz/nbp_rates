@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "nbp_rates"
 authors = [{ name = "Sebastian Kowalik" }]
-version = "1.1.20260711"
+version = "1.2.20260718"
 license = { text = "MIT" }
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -47,3 +47,7 @@ test = [
     "pytest>=6.0",
     "pytest-cov>=2.12",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["target_repo", ".git", "__pycache__", ".venv", "venv"]
