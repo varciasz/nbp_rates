@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="nbp_rates",
-    version="1.3.20260720",
+    version="1.4.20260721",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[],
