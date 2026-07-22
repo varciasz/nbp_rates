@@ -4,15 +4,18 @@ A modular Python library for providing NBP (Narodowy Bank Polski) exchange rates
 
 ## Features
 
-- **Offline Support**: Includes historical exchange rates from 1984 to 20-July-2026
-- **Online Fallback**: Automatically fetches from NBP API for dates after 20-July-2026
+- **Offline Support**: Includes historical exchange rates data from 1984 to 21-July-2026
+- **Online Fallback**: Automatically fetches from NBP API for dates after 21-July-2026
 - **Dual Table Support**: Supports both Table A (major currencies) and Table B (minor currencies)
 - **Smart Fallback**: Optionally searches last available rate before given date (handles holidays, weekends and missing data)
 - **Super Fast**: Optimized for speed with most queries served from local data with minimal API calls
-- **Easy and Powerful**: Simple to use with 100+ currencies supported
-- **Precise and exact output**: Results provided as string to avoid floating-point rounding issues
+- **Easy and Powerful**: Simple to use with 200+ currencies supported
+- **Precise and exact output**: No rounding within library. Results provided as string to avoid floating-point rounding issues
+- **Reliable**: As most of data is served offline, it is not affected by NBP API downtime, responsiveness or rate limits
 - **Flexible Date Input**: Accepts `datetime.date`, `datetime.datetime`, or ISO format strings (YYYY-MM-DD)
 - **No external dependencies**: Pure Python with standard library
+- **Daily Updates**: new version of library released daily with the latest exchange rates available offline
+
 
 ## Installation
 
@@ -108,7 +111,7 @@ Fetches the FX rate for a given date and currency.
 
 ## Data Sources
 
-- **Offline Data**: Embedded exchange rate data from 1984 to 20-July-2026
+- **Offline Data**: Embedded exchange rate data from 1984 to 21-July-2026
 - **Online Data**: NBP API (`https://api.nbp.pl/`) for dates after the offline data cutoff
 
 ## License
@@ -125,5 +128,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Changelog
 
-### Version 1.4.20260721
-- Initial release with offline and online exchange rate support
+### Current Version 1.5.20260722
+- Library is updated daily with the latest exchange rates included offline. Last 8 digits of version number represent the date when the version was generated (YYYYMMDD).
+
+### Version 1.5
+- First official stable version with automated daily updates and support for 200+ currencies.
