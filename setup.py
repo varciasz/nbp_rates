@@ -7,13 +7,13 @@ long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="nbp_rates",
-    version="1.5.20260722",
+    version="1.5.20260723",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[],
     python_requires=">=3.6",
     author="Sebastian Kowalik",
-    description="A modular library for NBP exchange rates with offline and online support.",
+    description="A modular library for NBP exchange rates with offline and online support. Very fast, reliable and easy to use.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/varciasz/nbp_rates",

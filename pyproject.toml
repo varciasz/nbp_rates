@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "nbp_rates"
 authors = [{ name = "Sebastian Kowalik" }]
-version = "1.5.20260722"
+version = "1.5.20260723"
 license = { text = "MIT" }
 classifiers = [
     "Development Status :: 5 - Production/Stable",
