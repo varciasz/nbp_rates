@@ -4,8 +4,8 @@ A modular Python library for providing NBP (Narodowy Bank Polski) exchange rates
 
 ## Features
 
-- **Offline Support**: Includes historical exchange rates data from 1984 to 22-July-2026
-- **Online Fallback**: Automatically fetches from NBP API for dates after 22-July-2026
+- **Offline Support**: Includes historical exchange rates data from 1984 to 23-July-2026
+- **Online Fallback**: Automatically fetches from NBP API for dates after 23-July-2026
 - **Dual Table Support**: Supports both Table A (major currencies) and Table B (minor currencies)
 - **Smart Fallback**: Optionally searches last available rate before given date (handles holidays, weekends and missing data)
 - **Super Fast**: Optimized for speed with most queries served from local data with minimal API calls
@@ -111,7 +111,7 @@ Fetches the FX rate for a given date and currency.
 
 ## Data Sources
 
-- **Offline Data**: Embedded exchange rate data from 1984 to 22-July-2026
+- **Offline Data**: Embedded exchange rate data from 1984 to 23-July-2026
 - **Online Data**: NBP API (`https://api.nbp.pl/`) for dates after the offline data cutoff
 
 ## License
@@ -128,7 +128,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Changelog
 
-### Current Version 1.5.20260723
+### Current Version 1.5.20260724
 - Library is updated daily with the latest exchange rates included offline. Last 8 digits of version number represent the date when the version was generated (YYYYMMDD).
 
 ### Version 1.5
