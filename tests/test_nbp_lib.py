@@ -2,6 +2,8 @@ import pytest
 import datetime
 from nbp_rates.nbp_rates import ProvideCurrencyRate
 
+# these tests are executed while daily updating the library and are used to verify that the generated library is working correctly and returns expected results for known historical data
+
 # Test data provided by the user: (Date_String, Currency, Expected_Result)
 TEST_CASES = [
     ("20120109", "USD", "3.5150"), ("20121107", "HKD", "0.4133"),
