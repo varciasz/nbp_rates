@@ -128,8 +128,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Changelog
 
-### Current Version 1.6.20260816
+### Current Version 1.6.20260817
 - Library is updated daily with the latest exchange rates included offline. Last 8 digits of version number represent the date when the version was generated (YYYYMMDD).
 
 ### Version 1.5
 - First official stable version with automated daily updates and support for 200+ currencies.
+### Version 1.6
+- added support for easy version checking
+print(nbp_rates.__version__)
