@@ -1,6 +1,6 @@
 from .nbp_rates import ProvideCurrencyRate
 
-__version__ = "1.6.20260825"
+__version__ = "1.6.20260826"
 
 __all__ = [
     "ProvideCurrencyRate",
