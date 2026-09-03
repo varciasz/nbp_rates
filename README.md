@@ -4,8 +4,8 @@ A modular Python library for providing NBP (Narodowy Bank Polski) exchange rates
 
 ## Features
 
-- **Offline Support**: Includes historical exchange rates data from 1984 to 01-September-2026
-- **Online Fallback**: Automatically fetches from NBP API for dates after 01-September-2026
+- **Offline Support**: Includes historical exchange rates data from 1984 to 02-September-2026
+- **Online Fallback**: Automatically fetches from NBP API for dates after 02-September-2026
 - **Dual Table Support**: Supports both Table A (major currencies) and Table B (minor currencies)
 - **Smart Fallback**: Optionally searches last available rate before given date (handles holidays, weekends and missing data)
 - **Super Fast**: Optimized for speed with most queries served from local data with minimal API calls
@@ -109,9 +109,26 @@ Fetches the FX rate for a given date and currency.
 **Raises:**
 - ValueError: If the date format is invalid or currency is not recognized
 
+### `SupportedCurrencies`
+
+A sorted list of all supported currency codes exposed by the package.
+
+```python
+from nbp_rates import SupportedCurrencies
+
+print("EUR" in SupportedCurrencies)
+# True 
+```
+
+**Type:** list[str]
+
+**Notes:**
+- The list is alphabetically sorted for easy discovery and iteration.
+- It contains the union of currencies available in both NBP tables (A and B).
+
 ## Data Sources
 
-- **Offline Data**: Embedded exchange rate data from 1984 to 01-September-2026
+- **Offline Data**: Embedded exchange rate data from 1984 to 02-September-2026
 - **Online Data**: NBP API (`https://api.nbp.pl/`) for dates after the offline data cutoff
 
 ## License
@@ -128,11 +145,19 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Changelog
 
-### Current Version 1.6.20260902
+### Current Version 1.7.20260903
 - Library is updated daily with the latest exchange rates included offline. Last 8 digits of version number represent the date when the version was generated (YYYYMMDD).
+
+### Version 1.7
+- Added `SupportedCurrencies`, a sorted list of all supported currencies.
+
+### Version 1.6
+- Added support for easy version checking
+
+```python
+import nbp_rates
+print(nbp_rates.__version__)
+```
 
 ### Version 1.5
 - First official stable version with automated daily updates and support for 200+ currencies.
-### Version 1.6
-- added support for easy version checking
-print(nbp_rates.__version__)

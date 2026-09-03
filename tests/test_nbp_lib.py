@@ -1,8 +1,26 @@
+import re
+from pathlib import Path
+
 import pytest
 import datetime
+import nbp_rates
 from nbp_rates.nbp_rates import ProvideCurrencyRate
 
 # these tests are executed while daily updating the library and are used to verify that the generated library is working correctly and returns expected results for known historical data
+
+
+def test_package_version_attribute_is_exposed_and_matches_source():
+    """The public package version should exist and match the source file, regardless of the release number."""
+    assert hasattr(nbp_rates, "__version__")
+    assert isinstance(nbp_rates.__version__, str)
+    assert nbp_rates.__version__
+
+    package_init = Path(__file__).resolve().parents[1] / "nbp_rates" / "__init__.py"
+    content = package_init.read_text(encoding="utf-8")
+    match = re.search(r'__version__\s*=\s*"([^"]+)"', content)
+    assert match is not None
+    assert nbp_rates.__version__ == match.group(1)
+    assert re.fullmatch(r"\d+\.\d+\.\d{8}", nbp_rates.__version__)
 
 # Test data provided by the user: (Date_String, Currency, Expected_Result)
 TEST_CASES = [
