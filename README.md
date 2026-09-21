@@ -145,7 +145,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Changelog
 
-### Current Version 1.7.20260920
+### Current Version 1.7.20260921
 - Library is updated daily with the latest exchange rates included offline. Last 8 digits of version number represent the date when the version was generated (YYYYMMDD).
 
 ### Version 1.7
