@@ -1,6 +1,6 @@
 from .nbp_rates import ProvideCurrencyRate, TABLE_A_CURRENCIES, TABLE_B_CURRENCIES
 
-__version__ = "1.7.20261002"
+__version__ = "1.7.20261003"
 
 SupportedCurrencies = sorted(TABLE_A_CURRENCIES | TABLE_B_CURRENCIES)
 
