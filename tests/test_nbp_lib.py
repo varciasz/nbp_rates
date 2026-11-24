@@ -1,5 +1,6 @@
 import re
 from pathlib import Path
+from unittest.mock import MagicMock, patch
 
 import pytest
 import datetime
@@ -252,3 +253,78 @@ def test_online_fetching(date_str, currency, expected):
     library_result = library_result.rstrip('0').rstrip('.') if '.' in library_result else library_result
     
     assert online_result == library_result, f"Online fetching mismatch for {currency} on {date_str}. Online: {online_result}, Library: {library_result}"
+
+
+def test_online_fetcher_retries_transient_network_errors():
+    import urllib.error
+    from nbp_rates.online_fetcher import fetch_rate_from_nbp
+
+    response = MagicMock()
+    response.getcode.return_value = 200
+    response.read.return_value = b'{"rates":[{"mid":3.5150}]}'
+    response.__enter__.return_value = response
+    response.__exit__.return_value = False
+
+    with patch("nbp_rates.online_fetcher.urllib.request.urlopen",
+               side_effect=[urllib.error.URLError("temporary failure"), response]), \
+         patch("nbp_rates.online_fetcher.time.sleep"):
+        result = fetch_rate_from_nbp(datetime.date(2012, 1, 9), "USD", "A")
+
+    assert result == "3.515"
+
+
+@pytest.mark.parametrize("max_attempts", [1, 4])
+def test_online_fetcher_respects_max_attempts(max_attempts):
+    import urllib.error
+    from nbp_rates.online_fetcher import fetch_rate_from_nbp
+
+    with patch("nbp_rates.online_fetcher.urllib.request.urlopen",
+               side_effect=urllib.error.URLError("temporary failure")) as urlopen, \
+         patch("nbp_rates.online_fetcher.time.sleep") as sleep:
+        result = fetch_rate_from_nbp(datetime.date(2012, 1, 9), "USD", "A",
+                                     MAX_ATTEMPTS=max_attempts)
+
+    assert result == "-1"
+    assert urlopen.call_count == max_attempts
+    assert sleep.call_count == max_attempts - 1
+
+
+@pytest.mark.parametrize("github_actions, expected_attempts", [(None, 3), ("true", 10)])
+def test_online_fetcher_default_attempts_depend_on_github_actions(monkeypatch, github_actions, expected_attempts):
+    import urllib.error
+    from nbp_rates.online_fetcher import fetch_rate_from_nbp
+
+    if github_actions is None:
+        monkeypatch.delenv("GITHUB_ACTIONS", raising=False)
+    else:
+        monkeypatch.setenv("GITHUB_ACTIONS", github_actions)
+
+    with patch("nbp_rates.online_fetcher.urllib.request.urlopen",
+               side_effect=urllib.error.URLError("temporary failure")) as urlopen, \
+         patch("nbp_rates.online_fetcher.time.sleep"):
+        result = fetch_rate_from_nbp(datetime.date(2012, 1, 9), "USD", "A")
+
+    assert result == "-1"
+    assert urlopen.call_count == expected_attempts
+
+
+def test_online_fetcher_explicit_attempts_override_github_actions(monkeypatch):
+    import urllib.error
+    from nbp_rates.online_fetcher import fetch_rate_from_nbp
+
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    with patch("nbp_rates.online_fetcher.urllib.request.urlopen",
+               side_effect=urllib.error.URLError("temporary failure")) as urlopen, \
+         patch("nbp_rates.online_fetcher.time.sleep"):
+        fetch_rate_from_nbp(datetime.date(2012, 1, 9), "USD", "A", MAX_ATTEMPTS=1)
+
+    assert urlopen.call_count == 1
+
+
+@pytest.mark.parametrize("max_attempts", [0, -1, 1.5, True])
+def test_online_fetcher_rejects_invalid_max_attempts(max_attempts):
+    from nbp_rates.online_fetcher import fetch_rate_from_nbp
+
+    with pytest.raises(ValueError, match="MAX_ATTEMPTS must be a positive integer"):
+        fetch_rate_from_nbp(datetime.date(2012, 1, 9), "USD", "A",
+                            MAX_ATTEMPTS=max_attempts)
